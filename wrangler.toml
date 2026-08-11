@@ -25,10 +25,16 @@ command = "npm run build:worker"
 
 # KV namespace for OAuth token storage
 # Create with: wrangler kv namespace create OAUTH_KV
-# Then paste the ID below
+# Then paste the ID below.
+#
+# Deploying a fork to your own Cloudflare account? Don't commit your namespace
+# id here — leave this file as upstream ships it and override at deploy time:
+#   sed 's/^id = ".*"/id = "YOUR_KV_ID"/' wrangler.toml > wrangler.local.toml
+#   npx wrangler deploy --config wrangler.local.toml
+# wrangler.local.toml is git-ignored.
 [[kv_namespaces]]
 binding = "OAUTH_KV"
-id = "c901c2af3b594ed9ae8133587e91a0f4"
+id = "7a077b34c5e94d3ba277fee716efe2f0"
 
 # OAuth requires a secret used to encrypt stored Plytix credentials at rest.
 # It is NOT declared here (secrets never live in wrangler.toml). Set it with:

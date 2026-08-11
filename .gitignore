@@ -96,3 +96,8 @@ jspm_packages/
 # TernJS port file
 .tern-port
 .gbrain-source
+
+# Fork deployment: local wrangler config carrying your own KV namespace id,
+# generated from wrangler.toml at deploy time. Never commit it.
+wrangler.local.toml
+deploy-fork.sh
